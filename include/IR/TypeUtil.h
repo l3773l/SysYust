@@ -51,6 +51,9 @@ namespace SysYust::IR {
         [[nodiscard]] bool isArr() const {
             return _id == arr;
         }
+        [[nodiscard]] bool isArrDecay() const {
+            return _id == arr && _data == 0;
+        }
         [[nodiscard]] bool isPtr() const {
             return _id == ptr;
         }
@@ -87,9 +90,9 @@ namespace SysYust::IR {
     private:
 
         Type(TypeId id, unsigned data, const Type *ptr)
-            : _id(id)
-            , _data(data)
-            , _subType(ptr)
+                : _id(id)
+                , _data(data)
+                , _subType(ptr)
         {
 
         }
