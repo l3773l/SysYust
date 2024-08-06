@@ -4,7 +4,6 @@
 
 #include <utility>
 #include <cassert>
-#include "IR/TypeUtil.h"
 
 #include "IR/Instruction.h"
 
@@ -239,7 +238,7 @@ namespace SysYust::IR {
             }
             case instruct_cate::load: {
                 auto &load_inst = std::get<load>(it);
-                load_inst.source = nArg.var();
+                load_inst.target = nArg.var();
                 break;
             }
             case instruct_cate::store: {
